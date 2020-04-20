@@ -1,0 +1,6 @@
+POST http://localhost:8092/goods?pageIndex=1&pageSize=10
+Content-Type: application/json
+
+{}
+
+###

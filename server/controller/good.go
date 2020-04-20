@@ -3,8 +3,11 @@ package controller
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"ndb/server/model"
+	"strconv"
 )
 
+// 商品分类
 func GetCates(c *gin.Context) {
 
 	cates := map[string]interface{}{
@@ -68,6 +71,7 @@ func GetCates(c *gin.Context) {
 
 }
 
+// 属性参数
 func GetAttrs(c *gin.Context) {
 
 	attr_type := c.Param("attr_type")
@@ -82,6 +86,7 @@ func GetAttrs(c *gin.Context) {
 	type_name := attr_type_name[attr_type]
 
 	for i := 10; i > 0; i-- {
+
 		mp := make(map[string]interface{})
 		mp["id"] = i
 		mp["name"] = fmt.Sprintf("%s%d", type_name, i)
@@ -97,4 +102,32 @@ func GetAttrs(c *gin.Context) {
 
 	c.JSON(200, mps)
 
+}
+
+// 商品列表
+func GetGoods(c *gin.Context) {
+
+	pageIndex, _ := strconv.ParseInt(c.DefaultQuery("pageIndex", "0"), 10, 64)
+	pageSize, _ := strconv.ParseInt(c.DefaultQuery("pageSize", "10"), 10, 64)
+
+	var query map[string]interface{}
+	c.ShouldBind(&query)
+
+	var keys string
+	if v, has := query["keys"]; has {
+		keys = v.(string)
+	}
+
+
+	var g model.Good
+	goods, total, _ := g.Gets(keys, int(pageIndex), int(pageSize))
+
+	results := map[string]interface{}{
+		"code":       0,
+		"message":    "操作成功",
+		"totalCount": total,
+		"goods":      goods,
+	}
+
+	c.JSON(200, results)
 }

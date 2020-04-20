@@ -18,6 +18,8 @@ func InitRouter() *gin.Engine {
 
 	r.GET("/good/cates", controller.GetCates)
 	r.POST("/good/attrs/:attr_type", controller.GetAttrs)
+	r.POST("/goods", controller.GetGoods)
+	r.POST("/upload", controller.Upload)
 
 	return r
 

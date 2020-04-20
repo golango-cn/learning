@@ -19,9 +19,14 @@ func GetMenus(c *gin.Context) {
 			{"id": 3, "name": "商品管理", "path": "/good", "children":[]map[string]interface{}{
 				{"id": 3100, "name": "商品分类", "path": "/cates"},
 				{"id": 3101, "name": "分类参数", "path": "/params"},
+				{"id": 3102, "name": "商品列表", "path": "/goods"},
 			}},
 			{"id": 4, "name": "订单管理", "path": "/orders"},
 			{"id": 5, "name": "数据统计", "path": "/reports"},
+
+			{"id": 6, "name": "通用", "path": "/common", "children":[]map[string]interface{}{
+				{"id": 6100, "name": "通用", "path": "/common"},
+			}},
 		},
 	}
 
