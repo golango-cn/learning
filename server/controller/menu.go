@@ -26,6 +26,7 @@ func GetMenus(c *gin.Context) {
 
 			{"id": 6, "name": "通用", "path": "/common", "children":[]map[string]interface{}{
 				{"id": 6100, "name": "通用", "path": "/common"},
+				{"id": 6101, "name": "报表", "path": "/reports"},
 			}},
 		},
 	}
