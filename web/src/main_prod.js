@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './plugins/element.js'
+// import './plugins/element.js'
 
 import axios from 'axios'
 // 导入样式表
 import './assets/css/global.css'
-import 'element-ui/lib/theme-chalk/index.css'
+// import 'element-ui/lib/theme-chalk/index.css'
 
 import TreeTable from 'vue-table-with-tree-grid'
 
 import Nprogress from 'nprogress'
-import 'nprogress/nprogress.css'
+// import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = '/api'
+axios.defaults.baseURL = 'http://vue.golango.cn/api'
 axios.interceptors.request.use(config => {
   Nprogress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')

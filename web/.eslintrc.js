@@ -20,6 +20,8 @@ module.exports = {
     'no-trailing-spaces': 0,
     'object-curly-spacing': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'semi': 0,
+    'quote-props': 0
   }
 }

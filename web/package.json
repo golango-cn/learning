@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve -mode developemnt"
+    "dev": "vue-cli-service serve -mode developemnt",
+    "build-prod": "vue-cli-service build --mode production"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -20,6 +21,7 @@
     "vue-table-with-tree-grid": "^0.2.4"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-plugin-router": "~4.3.0",
